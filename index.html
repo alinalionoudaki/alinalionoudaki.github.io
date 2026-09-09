@@ -41,7 +41,7 @@
       overflow-x: hidden;
     }
 
-    /* BACKGROUND ABSTRACT BLOBS */
+    /* ABSTRACT BACKGROUND BLOBS */
     .blob {
       position: fixed;
       filter: blur(120px);
@@ -173,7 +173,7 @@
     }
 
     .timeline-item {
-      padding: 20px;
+      padding: 22px;
       border-radius: 14px;
       background: var(--bg-card-alt);
       border: 1px solid var(--border-color);
@@ -186,11 +186,11 @@
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .role-title {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #fff;
     }
@@ -219,7 +219,7 @@
       color: var(--accent-teal);
       font-weight: 700;
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     /* SKILLS GRID */
@@ -239,7 +239,7 @@
     .skill-card h3 {
       font-size: 1rem;
       color: var(--accent-teal);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .skill-card ul {
@@ -262,7 +262,7 @@
       font-weight: bold;
     }
 
-    /* HIGHLIGHT BOX */
+    /* HIGHLIGHT & LIST BOXES */
     .highlight-box {
       background: var(--gradient-card);
       border: 1px solid rgba(112, 0, 255, 0.3);
@@ -274,7 +274,28 @@
     .highlight-box h4 {
       color: #fff;
       font-size: 1.05rem;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .bullet-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent-teal);
     }
 
     /* LINKS */
@@ -367,35 +388,36 @@
       <h2>Skills & Expertise</h2>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Programming</h3>
+          <h3>Programming & IDEs</h3>
           <ul>
+            <li>Visual Studio Code (VS Code)</li>
             <li>Python, C, Java</li>
-            <li>SQL, Prolog</li>
-            <li>Verilog, Matlab</li>
+            <li>SQL, Prolog, Verilog, MATLAB</li>
           </ul>
         </div>
         <div class="skill-card">
-          <h3>Software & Tools</h3>
+          <h3>AI & Creative Tools</h3>
           <ul>
-            <li>LaTeX, ERP Systems</li>
-            <li>Filmora, Wavesurfer</li>
-            <li>Microsoft Office Suite</li>
+            <li>Gemini, ChatGPT, Copilot</li>
+            <li>Canva, CapCut, DALL·E</li>
+            <li>Filmora, Wavesurfer, LaTeX</li>
           </ul>
         </div>
         <div class="skill-card">
-          <h3>AI & Technologies</h3>
-          <ul>
-            <li>ChatGPT, Copilot, DALL·E</li>
-            <li>Generative AI Tools</li>
-            <li>Signal & Speech Processing</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Core Competencies</h3>
+          <h3>Management & Admin</h3>
           <ul>
             <li>Project Management</li>
-            <li>Interdisciplinary Teaching</li>
-            <li>Quality Control & Operations</li>
+            <li>Executive Administration</li>
+            <li>Quality Control Operations</li>
+            <li>ERP Systems & Business Strategy</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Specialized Expertise</h3>
+          <ul>
+            <li>Speech Signal Processing</li>
+            <li>Special Needs Education</li>
+            <li>STEM & Interdisciplinary Teaching</li>
           </ul>
         </div>
       </div>
@@ -414,7 +436,7 @@
             </div>
             <span class="badge-year">2023 – 2026</span>
           </div>
-          <p>Leading computer science education, mentoring student innovative entrepreneurship projects, and coordinating European/national competitive initiatives.</p>
+          <p>Leading computer science education, mentoring student innovative entrepreneurship projects, and coordinating European and national competitive educational programs.</p>
         </div>
 
         <div class="timeline-item">
@@ -447,7 +469,7 @@
             </div>
             <span class="badge-year">2014 – 2023</span>
           </div>
-          <p>Overseeing operational workflows, laboratory quality management, and business administration strategies.</p>
+          <p>Overseeing operational workflows, executive business administration, and laboratory quality management strategies.</p>
         </div>
 
         <div class="timeline-item">
@@ -507,12 +529,32 @@
             </div>
             <span class="badge-year">2025 – 2026</span>
           </div>
-          <p>Mentored student team for automated robotic lawn disease detection and management.</p>
+          <p>Mentored student team in developing a robotic patrol system for early disease detection and targeted plant protection[cite: 1].</p>
+          
+          <ul class="bullet-list">
+            <li>Detects diseases such as fungi and rust using AI image analysis[cite: 1]</li>
+            <li>Measures soil moisture and collects real-time data[cite: 1]</li>
+            <li>Performs targeted spraying only where needed[cite: 1]</li>
+            <li>Reduces chemical use, costs, and maintenance time[cite: 1]</li>
+            <li>Improves lawn quality and operational efficiency[cite: 1]</li>
+          </ul>
+
           <div class="highlight-box">
-            <h4>🏆 Awards & Distinction:</h4>
-            <p>• <b>Technology Pioneer Award</b> by ManpowerGroup</p>
-            <p>• <b>“Odysseas Kyriakopoulos” Award</b> in Digital Technologies & Artificial Intelligence</p>
+            <h4>🏆 Awards & Distinctions:</h4>
+            <p>• <b>Technology Pioneer Award</b> by ManpowerGroup[cite: 1]</p>
+            <p>• <b>“Odysseas Kyriakopoulos” Award</b> in Digital Technologies & Artificial Intelligence[cite: 1]</p>
           </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">SaferInternet.gr AI Competition</div>
+              <div class="institution">Hellenic Safer Internet Center</div>
+            </div>
+            <span class="badge-year">2025 – 2026</span>
+          </div>
+          <p>Guided students through the creation of educational comics designed in <b>Canva</b> leveraging Generative AI image synthesis on the theme: <i>"Professions and Skills in the Era of Artificial Intelligence" (Επαγγέλματα και δεξιότητες στην εποχή της Τεχνητής Νοημοσύνης)</i>.</p>
         </div>
 
         <div class="timeline-item">
@@ -535,18 +577,7 @@
             </div>
             <span class="badge-year">2025 – 2026</span>
           </div>
-          <p>Coordinated and guided student participation in advanced problem-solving and algorithmic logic challenges.</p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <div>
-              <div class="role-title">SaferInternet.gr AI Competition</div>
-              <div class="institution">Generative AI Content Creation</div>
-            </div>
-            <span class="badge-year">2025 – 2026</span>
-          </div>
-          <p>Supervised student creation of AI-generated educational comics on <i>"Professions and Skills in the Era of Artificial Intelligence"</i>.</p>
+          <p>Mentored and prepared student teams for competitive challenges in mathematical logic, algorithmic reasoning, and problem-solving.</p>
         </div>
 
       </div>
