@@ -3,248 +3,648 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alina Lionoudaki – Portfolio</title>
+  <title>Alina Lionoudaki – Modern Portfolio & CV</title>
 
-  <!-- Modern Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    :root {
+      --bg-primary: #0f111a;
+      --bg-card: #181b29;
+      --bg-card-alt: #202436;
+      --accent-purple: #7000ff;
+      --accent-teal: #00f2fe;
+      --accent-pink: #ff007f;
+      --text-main: #f0f2f8;
+      --text-muted: #a0a7c4;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --gradient-main: linear-gradient(135deg, #7000ff 0%, #00f2fe 100%);
+      --gradient-card: linear-gradient(135deg, rgba(112, 0, 255, 0.05) 0%, rgba(0, 242, 254, 0.05) 100%);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: #f5f5f5;
-      color: #333;
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-  /* HEADER */
-header {
-  background: linear-gradient(135deg, #5027F5, #6c4bff);
-  color: #fff;
-  text-align: center;
-  padding: 70px 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-header::before,
-header::after {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 180px;
-  left: -10%;
-  border-radius: 50%;
-  z-index: 0;
-}
-
-header::before {
-  bottom: -80px;
-  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15), transparent 70%);
-}
-
-header::after {
-  top: -90px;
-  background: radial-gradient(circle at 70% 40%, rgba(255,255,255,0.1), transparent 70%);
-}
-
-header h1, 
-header p, 
-header nav {
-  position: relative;
-  z-index: 1;
-}
-
-   
-    nav a {
-      color: #ffdd57;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.3s ease;
-    }
-    nav a:hover {
-      opacity: 0.7;
-    }
-
-    /* SECTIONS */
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      position: relative;
-      overflow: hidden;
-      background: #fff;
-    }
-    section h2 {
-      color: #5027F5;
-      border-left: 6px solid #5027F5;
-      padding-left: 12px;
-      font-size: 1.6em;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-    section ul {
-      list-style: none;
       padding: 0;
     }
-    section ul li {
-      margin-bottom: 10px;
-      padding-left: 20px;
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND ABSTRACT BLOBS */
+    .blob {
+      position: fixed;
+      filter: blur(120px);
+      z-index: -1;
+      border-radius: 50%;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    .blob-1 {
+      top: -10%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      background: var(--accent-purple);
+    }
+    .blob-2 {
+      bottom: 10%;
+      right: -10%;
+      width: 45vw;
+      height: 45vw;
+      background: var(--accent-teal);
+    }
+
+    /* HEADER */
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
       position: relative;
     }
-    section ul li::before {
-      content: "—";
-      color: #5027F5;
+
+    .header-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 8px 18px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: var(--text-main);
+      color: var(--bg-primary);
+      transform: translateY(-2px);
+    }
+
+    /* LAYOUT CONTAINERS */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 40px;
+      margin-bottom: 35px;
+      position: relative;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    section:hover {
+      border-color: rgba(0, 242, 254, 0.3);
+    }
+
+    /* SECTION TITLES */
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: var(--accent-teal);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--accent-teal);
+    }
+
+    /* CARDS & TIMELINES */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .timeline-item {
+      padding: 20px;
+      border-radius: 14px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .role-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .institution {
+      color: var(--accent-teal);
+      font-size: 0.95rem;
+    }
+
+    .badge-year {
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(112, 0, 255, 0.2);
+      border: 1px solid rgba(112, 0, 255, 0.4);
+      color: #d1b3ff;
+      font-weight: 600;
+    }
+
+    .badge-score {
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(0, 242, 254, 0.15);
+      border: 1px solid rgba(0, 242, 254, 0.4);
+      color: var(--accent-teal);
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--bg-card-alt);
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+    }
+
+    .skill-card h3 {
+      font-size: 1rem;
+      color: var(--accent-teal);
+      margin-bottom: 10px;
+    }
+
+    .skill-card ul {
+      list-style: none;
+    }
+
+    .skill-card li {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .skill-card li::before {
+      content: "•";
+      color: var(--accent-purple);
       position: absolute;
       left: 0;
+      font-weight: bold;
     }
 
-    /* Abstract background accents */
-    section::before, section::after {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      opacity: 0.06;
-    }
-    section::before {
-      width: 220px; height: 2px;
-      top: 25px; left: -40px;
-      background: linear-gradient(90deg, #5027F5, transparent);
-    }
-    section::after {
-      width: 2px; height: 220px;
-      bottom: -40px; right: 25px;
-      background: linear-gradient(180deg, #8888ff, transparent);
-    }
-    section * {
-      position: relative;
-      z-index: 1;
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: var(--gradient-card);
+      border: 1px solid rgba(112, 0, 255, 0.3);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 15px;
     }
 
-    /* DISTINCT BACKGROUNDS */
-    #skills { background: #f0f4ff; }
-    #experience { background: #fafaff; }
-    #education { background: #f7f9fc; }
-    #certifications { background: #fdf8ff; }
-    #publications { background: #f9f9f9; }
-    #abstract { background: #f6f0fa; }
-    #contact { background: #f2f2f7; }
+    .highlight-box h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
 
     /* LINKS */
     a {
-      color: #5027F5;
-      font-weight: 500;
+      color: var(--accent-teal);
       text-decoration: none;
+      transition: color 0.2s ease;
     }
+
     a:hover {
       text-decoration: underline;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background: var(--gradient-main);
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(112, 0, 255, 0.4);
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 25px;
-      background: #5027F5;
-      color: #fff;
-      font-size: 0.9em;
-      margin-top: 40px;
-      letter-spacing: 0.5px;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      section { padding: 25px; }
+      .timeline-header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
+
+  <!-- Abstract Background Shapes -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
   <header>
-    <h1>Alina Lionoudaki</h1>
-    <p>Software Engineer | Data Analyst | Teacher</p>
-    <nav>
-      <a href="#profile">Profile</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#publications">Publications</a>
-      <a href="#abstract">Thesis Abstract</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-content">
+      <h1>Alina Lionoudaki</h1>
+      <p class="tagline">Software Engineer | Data Analyst | Educator</p>
+      <nav>
+        <a href="#profile">Profile</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Initiatives & Awards</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Sections remain same content -->
-  <section id="profile">
-    <h2>Profile</h2>
-    <p>I possess a diverse background in software engineering, informatics education,
-    special needs' education, business management, and quality control. I combine
-    strong analytical skills with creativity and a customer-oriented approach to product
-    development. I aim to contribute to innovative teams with vision and adaptability.</p>
-  </section>
+  <main class="container">
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Programming: C, Java, Verilog, SQL, Prolog, Matlab, Python</li>
-      <li>Software: Microsoft Office, LATeX, ERP, Filmora, Wavesurfer</li>
-      <li>AI Tools: ChatGPT, Copilot, DALL·E</li>
-      <li>Organizational & communication excellence</li>
-      <li>Strong adaptability and project management</li>
-    </ul>
-  </section>
+    <!-- PROFILE -->
+    <section id="profile">
+      <h2>Profile</h2>
+      <p>I possess a diverse background spanning software engineering, speech signal processing, informatics education, special needs education, business management, and quality control. Combining strong analytical capabilities with creative problem-solving and a customer-centric focus, I strive to foster innovation and project excellence across technological and educational domains.</p>
+    </section>
 
-  <section id="experience">
-    <h2>Work Experience</h2>
-    <ul>
-      <li><b>Manager Director / Quality Control Director</b> – Oxytech Labs, Chania (2014–Present)</li>
-      <li><b>Speech Data Analyst</b> – Altered AI, UK (2020–2023)</li>
-      <li><b>Informatics Teacher</b> – Primary & Special Education, Chania (2020–2023)</li>
-      <li><b>Informatics Teacher</b> – Private Institution, Chania (2012–2019)</li>
-      <li><b>Imports Manager</b> – MOBIAK S.A., Chania (2011–2012)</li>
-      <li><b>Speech Data Ops Engineer</b> – Google, London (2011)</li>
-    </ul>
-  </section>
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <ul>
+            <li>Python, C, Java</li>
+            <li>SQL, Prolog</li>
+            <li>Verilog, Matlab</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Software & Tools</h3>
+          <ul>
+            <li>LaTeX, ERP Systems</li>
+            <li>Filmora, Wavesurfer</li>
+            <li>Microsoft Office Suite</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>AI & Technologies</h3>
+          <ul>
+            <li>ChatGPT, Copilot, DALL·E</li>
+            <li>Generative AI Tools</li>
+            <li>Signal & Speech Processing</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Core Competencies</h3>
+          <ul>
+            <li>Project Management</li>
+            <li>Interdisciplinary Teaching</li>
+            <li>Quality Control & Operations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><b>MSc in Computer Science</b> – University of Crete (2007–2010) – <a href="https://www.csd.uoc.gr/~sspl/MSc/Lionoudaki.pdf" target="_blank">Thesis</a></li>
-      <li><b>BSc in Computer Science</b> – University of Crete (2002–2007)</li>
-      <li><b>Master's Degree in Special Education</b> – Frederick University (2017–2019)</li>
-    </ul>
-  </section>
+    <!-- WORK EXPERIENCE -->
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Informatics Teacher</div>
+              <div class="institution">Model Vocational Secondary School of Akrotiri (Π.ΕΠΑ.Λ. Ακρωτηρίου)</div>
+            </div>
+            <span class="badge-year">2023 – 2026</span>
+          </div>
+          <p>Leading computer science education, mentoring student innovative entrepreneurship projects, and coordinating European/national competitive initiatives.</p>
+        </div>
 
-  <section id="certifications">
-    <h2>Certifications & Additional Training</h2>
-    <ul>
-      <li>2024–2025: Panhellenic STEM Competition – Hellenic-German Education & Vodafone Foundation</li>
-      <li>2021: Internet Safety for Children with Developmental Disorders – Hellenic Safer Internet Center</li>
-      <li>2021: Training Teachers in Skills through Workshops, Institute of Educational Policy</li>
-      <li>2021: Fast-Paced Teacher Training in Distance Education, Aristotle University</li>
-      <li>2016: Adaptation to Learning & Learning Difficulties, EXCELLENT Seminar Center</li>
-      <li>2012–2013: Educational Psychology & Dyslexia, National University of Athens</li>
-      <li>2008: Advanced Voice Function Assessment, University of Tampere, Finland</li>
-    </ul>
-  </section>
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Speech Data Analyst</div>
+              <div class="institution">Altered AI, UK</div>
+            </div>
+            <span class="badge-year">2020 – 2023</span>
+          </div>
+          <p>Analyzed speech datasets, performed quality assurance, and contributed to voice synthesis and processing workflows.</p>
+        </div>
 
-  <section id="publications">
-    <h2>Publications</h2>
-    <ul>
-      <li>York, May 2010 – <i>“On the derivative of the EGG Signal for determining GCIs and GOIs”</i></li>
-    </ul>
-  </section>
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Informatics Teacher</div>
+              <div class="institution">Primary & Special Education, Chania</div>
+            </div>
+            <span class="badge-year">2020 – 2023</span>
+          </div>
+          <p>Designed tailored computer science curricula integrated with special needs learning methodologies.</p>
+        </div>
 
-  <section id="abstract"> <h2>MSc Thesis Abstract</h2> <p><i>Voice quality is a complex attribute of voice but one important aspect arises from the regularity and duration of the closed phase from vocal fold cycle to cycle. The determination of closed phase requires the accurate detection of glottal closure (GCI) and glottal opening (GOI) instant. In literature, many methods have been suggested on this direction employing either the Electoglottographic (EGG) or the speech signal.</i></p> <p><i>This work presents a robust algorithm for the detection of glottal instants from the EGG signal and a study on the interaction between Amplitude-Frequency components of speech and glottal phases. The determination of GCIs and GOIs, is quite straightforward using Electroglottographic (EEG) signals, The derivative of EGG offers a simple way in detecting the important instances during the production of speech; the glottal closing and opening instants. In this thesis we suggest an alternative method to the simple derivative which is based on the spectral methods. Spectral methods provide an elegant way to conduct first and higher order derivatives on discrete time data, with high accuracy.</i></p> <p><i>Furthermore, we introduce a new way to differentiate the EGG signal for estimating the main glottal instants. The gradient of electoglottogrpahic signal is performed with a method referred to as "Slope Filtering". This approach shows to be robust in revealing the major peaks in the slope filtered EGG signal, even in cases where the quality of the EGG recordings is not good. Contrary to the simple derivative of the EGG signal, the peaks can be well distinguished and uniquely specified in the slope filtered signal. The proposed method exhibits high accuracy of voiced segments, including the onset and offset regions. The derivation of glottal phases from speech signal has drawn great attention in recent years. A novel approach, relying on the speech signal, is proposed nased on a Quasi-Harmonic (QHM) representation of speech. The adaptive QHM algorithm estimates the instantaneous AM-FM components of the speech signal. The extracted components, which are used for the reconstruction of the signal, are correlated to the glottal phases generated from the EGG signal. The AM component follows a steady pattern for each glottal phasem whereas the FM component shows low variations for various speakers.</i></p> </section>
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Managing Director / Quality Control Director</div>
+              <div class="institution">Oxytech Labs, Chania</div>
+            </div>
+            <span class="badge-year">2014 – 2023</span>
+          </div>
+          <p>Overseeing operational workflows, laboratory quality management, and business administration strategies.</p>
+        </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li>🔗 <a href="https://www.linkedin.com/in/alinalionoudaki/" target="_blank">LinkedIn</a></li>
-      <li>🐙 <a href="https://github.com/alinalionoudaki/" target="_blank">GitHub</a></li>
-    </ul>
-  </section>
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Informatics Teacher</div>
+              <div class="institution">Private Educational Institutions, Chania</div>
+            </div>
+            <span class="badge-year">2012 – 2019</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Imports Manager</div>
+              <div class="institution">MOBIAK S.A., Chania</div>
+            </div>
+            <span class="badge-year">2011 – 2012</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Speech Data Ops Engineer</div>
+              <div class="institution">Google, London</div>
+            </div>
+            <span class="badge-year">2011</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Researcher - Signal Processing</div>
+              <div class="institution">ICS-FORTH Institute, Heraklion, Crete</div>
+            </div>
+            <span class="badge-year">2007 – 2010</span>
+          </div>
+          <p>Research and implementation in speech signal analysis, glottal instant detection algorithms, and spectral acoustics.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SCHOOL INITIATIVES & AWARDS -->
+    <section id="projects">
+      <h2>School Initiatives, Competitions & Erasmus (2025–2026)</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">GrassBot Solutions — JA Greece Student Enterprise</div>
+              <div class="institution">Model Vocational Secondary School of Akrotiri</div>
+            </div>
+            <span class="badge-year">2025 – 2026</span>
+          </div>
+          <p>Mentored student team for automated robotic lawn disease detection and management.</p>
+          <div class="highlight-box">
+            <h4>🏆 Awards & Distinction:</h4>
+            <p>• <b>Technology Pioneer Award</b> by ManpowerGroup</p>
+            <p>• <b>“Odysseas Kyriakopoulos” Award</b> in Digital Technologies & Artificial Intelligence</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Erasmus+ KA122 Proposal Coordination</div>
+              <div class="institution">European Educational Mobility Project</div>
+            </div>
+            <span class="badge-year">2025 – 2026</span>
+          </div>
+          <p><b>Proposal Title:</b> <i>“Redefining Learning through Artificial Intelligence for an Inclusive, Interdisciplinary, and Green School”</i></p>
+          <span class="badge-score">Evaluation Score: 92 / 100</span>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">5th Panhellenic Student Competition "Alan Turing"</div>
+              <div class="institution">Mathematical Logic and Computational Thinking</div>
+            </div>
+            <span class="badge-year">2025 – 2026</span>
+          </div>
+          <p>Coordinated and guided student participation in advanced problem-solving and algorithmic logic challenges.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">SaferInternet.gr AI Competition</div>
+              <div class="institution">Generative AI Content Creation</div>
+            </div>
+            <span class="badge-year">2025 – 2026</span>
+          </div>
+          <p>Supervised student creation of AI-generated educational comics on <i>"Professions and Skills in the Era of Artificial Intelligence"</i>.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">MSc in Special Education</div>
+              <div class="institution">Frederick University</div>
+            </div>
+            <span class="badge-year">2017 – 2019</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">MSc in Computer Science</div>
+              <div class="institution">University of Crete</div>
+            </div>
+            <span class="badge-year">2007 – 2010</span>
+          </div>
+          <p><a href="https://www.csd.uoc.gr/~sspl/MSc/Lionoudaki.pdf" target="_blank">📄 View Thesis PDF</a></p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">BSc in Computer Science</div>
+              <div class="institution">University of Crete</div>
+            </div>
+            <span class="badge-year">2002 – 2007</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <h2>Certifications & Professional Training</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p>• <b>2024–2025:</b> Panhellenic STEM Competition – Hellenic-German Education & Vodafone Foundation</p>
+          <p>• <b>2021:</b> Internet Safety for Children with Developmental Disorders – Hellenic Safer Internet Center</p>
+          <p>• <b>2021:</b> Training Teachers in Skills through Workshops – Institute of Educational Policy</p>
+          <p>• <b>2021:</b> Fast-Paced Teacher Training in Distance Education – Aristotle University of Thessaloniki</p>
+          <p>• <b>2016:</b> Adaptation to Learning & Learning Difficulties – EXCELLENT Seminar Center</p>
+          <p>• <b>2012–2013:</b> Educational Psychology & Dyslexia – National & Kapodistrian University of Athens</p>
+          <p>• <b>2008:</b> Advanced Voice Function Assessment – University of Tampere, Finland</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS & THESIS -->
+    <section id="publications">
+      <h2>Publications & Research Abstract</h2>
+      
+      <div class="timeline-item" style="margin-bottom: 25px;">
+        <div class="role-title">York, May 2010</div>
+        <p><i>“On the derivative of the EGG Signal for determining GCIs and GOIs”</i></p>
+      </div>
+
+      <div class="highlight-box">
+        <h4>MSc Thesis Abstract</h4>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px;">
+          Voice quality is a complex attribute of voice arising from the regularity and duration of the closed phase from vocal fold cycle to cycle. Accurate determination of glottal closure (GCI) and glottal opening (GOI) instants is crucial. This work introduces a robust algorithm for glottal instant detection from Electroglottographic (EGG) signals and investigates interactions between speech AM-FM components and glottal phases.
+        </p>
+        <p style="font-size: 0.95rem; color: var(--text-muted);">
+          By utilizing "Slope Filtering" based on spectral differentiation rather than standard derivatives, the algorithm reliably highlights major slope-filtered peaks even in noisy recordings. Furthermore, an adaptive Quasi-Harmonic Model (QHM) representation extracts instantaneous AM-FM components correlated with EGG glottal phases, proving high accuracy across diverse speech segments and speakers.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact & Profiles</h2>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/alinalionoudaki/" target="_blank" class="contact-btn">
+          <span>LinkedIn Profile</span>
+        </a>
+        <a href="https://github.com/alinalionoudaki/" target="_blank" class="contact-btn">
+          <span>GitHub Profile</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    <p>&copy; 2025 Alina Lionoudaki</p>
+    <p>&copy; 2026 Alina Lionoudaki. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
