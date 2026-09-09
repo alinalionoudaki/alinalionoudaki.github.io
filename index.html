@@ -41,7 +41,7 @@
       overflow-x: hidden;
     }
 
-    /* ABSTRACT BACKGROUND BLOBS */
+    /* BACKGROUND ABSTRACT BLOBS */
     .blob {
       position: fixed;
       filter: blur(120px);
@@ -298,7 +298,24 @@
       color: var(--accent-teal);
     }
 
-    /* LINKS */
+    /* PROJECT IMAGE STYLING */
+    .project-image-container {
+      margin: 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      max-width: 100%;
+    }
+
+    .project-image-container img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* LINKS & BUTTONS */
     a {
       color: var(--accent-teal);
       text-decoration: none;
@@ -307,6 +324,25 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    .doc-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      color: var(--accent-teal);
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    .doc-link-btn:hover {
+      background: rgba(0, 242, 254, 0.2);
+      text-decoration: none;
     }
 
     .contact-links {
@@ -531,6 +567,11 @@
           </div>
           <p>Mentored student team in developing a robotic patrol system for early disease detection and targeted plant protection[cite: 1].</p>
           
+          <!-- Image Container -->
+          <div class="project-image-container">
+            <img src="IMG_20260326_100417.jpg" alt="GrassBot Solutions Robotic Patrol Vehicle Prototype">
+          </div>
+
           <ul class="bullet-list">
             <li>Detects diseases such as fungi and rust using AI image analysis[cite: 1]</li>
             <li>Measures soil moisture and collects real-time data[cite: 1]</li>
@@ -538,6 +579,10 @@
             <li>Reduces chemical use, costs, and maintenance time[cite: 1]</li>
             <li>Improves lawn quality and operational efficiency[cite: 1]</li>
           </ul>
+
+          <a href="https://drive.google.com/file/d/1E7_BfCODEG2nFHjwuN17_xBINBbp_hat/view?usp=drive_link" target="_blank" class="doc-link-btn">
+            📁 View GrassBot Presentation Document
+          </a>
 
           <div class="highlight-box">
             <h4>🏆 Awards & Distinctions:</h4>
