@@ -41,7 +41,7 @@
       overflow-x: hidden;
     }
 
-    /* BACKGROUND ABSTRACT BLOBS */
+    /* ABSTRACT BACKGROUND BLOBS */
     .blob {
       position: fixed;
       filter: blur(120px);
@@ -298,21 +298,31 @@
       color: var(--accent-teal);
     }
 
-    /* PROJECT IMAGE STYLING */
+    /* PROJECT IMAGE GRID */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin: 18px 0;
+    }
+
     .project-image-container {
-      margin: 15px 0;
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border-color);
-      max-width: 100%;
+      background: #000;
     }
 
     .project-image-container img {
       width: 100%;
-      height: auto;
-      max-height: 400px;
+      height: 240px;
       object-fit: cover;
       display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .project-image-container img:hover {
+      transform: scale(1.03);
     }
 
     /* LINKS & BUTTONS */
@@ -385,6 +395,7 @@
       h1 { font-size: 2.5rem; }
       section { padding: 25px; }
       .timeline-header { flex-direction: column; align-items: flex-start; }
+      .image-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -554,7 +565,7 @@
 
     <!-- SCHOOL INITIATIVES & AWARDS -->
     <section id="projects">
-      <h2>School Initiatives, Competitions & Erasmus (2025–2026)</h2>
+      <h2>School Initiatives, Competitions & Erasmus (2025–2027)</h2>
       <div class="timeline">
         
         <div class="timeline-item">
@@ -565,19 +576,24 @@
             </div>
             <span class="badge-year">2025 – 2026</span>
           </div>
-          <p>Mentored student team in developing a robotic patrol system for early disease detection with AI and targeted plant protection.</p>
+          <p>Mentored student team in developing a robotic patrol system for early disease detection and targeted plant protection[cite: 1].</p>
           
-          <!-- Image Container -->
-          <div class="project-image-container">
-            <img src="grassbot.jpg" alt="GrassBot Solutions Robotic Patrol Vehicle Prototype">
+          <!-- Image Grid: Prototype & Award Coverage -->
+          <div class="image-grid">
+            <div class="project-image-container">
+              <img src="IMG_20260326_100417.jpg" alt="GrassBot Solutions Robotic Patrol Vehicle Prototype">
+            </div>
+            <div class="project-image-container">
+              <img src="https://drive.google.com/uc?export=view&id=1CkcwDSoKQyKTdJIAs8lPprXlMAZQMYKd" alt="Haniotika Nea Public News Award Feature - GrassBot Solutions">
+            </div>
           </div>
 
           <ul class="bullet-list">
-            <li>Detects diseases such as fungi and rust using AI image analysis</li>
-            <li>Measures soil moisture and collects real-time data</li>
-            <li>Performs targeted spraying only where needed</li>
-            <li>Reduces chemical use, costs, and maintenance time</li>
-            <li>Improves lawn quality and operational efficiency</li>
+            <li>Detects diseases such as fungi and rust using AI image analysis[cite: 1]</li>
+            <li>Measures soil moisture and collects real-time data[cite: 1]</li>
+            <li>Performs targeted spraying only where needed[cite: 1]</li>
+            <li>Reduces chemical use, costs, and maintenance time[cite: 1]</li>
+            <li>Improves lawn quality and operational efficiency[cite: 1]</li>
           </ul>
 
           <a href="https://drive.google.com/file/d/1E7_BfCODEG2nFHjwuN17_xBINBbp_hat/view?usp=drive_link" target="_blank" class="doc-link-btn">
@@ -588,6 +604,23 @@
             <h4>🏆 Awards & Distinctions:</h4>
             <p>• <b>Technology Pioneer Award</b> by ManpowerGroup[cite: 1]</p>
             <p>• <b>“Odysseas Kyriakopoulos” Award</b> in Digital Technologies & Artificial Intelligence[cite: 1]</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Erasmus+ International Hosting & Exchange</div>
+              <div class="institution">Model Vocational Secondary School of Akrotiri & Voxnadalens Gymnasium (Edsbyn, Sweden)</div>
+            </div>
+            <span class="badge-year">2026 – 2027</span>
+          </div>
+          <p>Organized and coordinated the educational hosting of 30 Swedish students and staff from Edsbyn in May 2026 at Π.ΕΠΑ.Λ. Ακρωτηρίου, facilitating intercultural workshops, robotics activities, and educational exchange.</p>
+          
+          <div class="image-grid">
+            <div class="project-image-container">
+              <img src="https://drive.google.com/uc?export=view&id=1u28dknihHif_JP_WI3RlRSyOFRUfOHHe" alt="Erasmus International Student Hosting from Edsbyn, Sweden">
+            </div>
           </div>
         </div>
 
