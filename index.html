@@ -67,7 +67,7 @@
 
     /* HEADER */
     header {
-      padding: 80px 20px 60px;
+      padding: 70px 20px 50px;
       text-align: center;
       position: relative;
     }
@@ -75,6 +75,18 @@
     .header-content {
       max-width: 850px;
       margin: 0 auto;
+    }
+
+    .profile-avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      border: 3px solid transparent;
+      background: var(--gradient-main) border-box;
+      box-shadow: 0 0 25px rgba(112, 0, 255, 0.4);
+      display: block;
     }
 
     h1 {
@@ -298,10 +310,10 @@
       color: var(--accent-teal);
     }
 
-    /* PROJECT IMAGE GRID */
+    /* IMAGE GRID & PREVIEWS */
     .image-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 15px;
       margin: 18px 0;
     }
@@ -315,7 +327,7 @@
 
     .project-image-container img {
       width: 100%;
-      height: 240px;
+      height: 280px;
       object-fit: cover;
       display: block;
       transition: transform 0.3s ease;
@@ -323,6 +335,14 @@
 
     .project-image-container img:hover {
       transform: scale(1.03);
+    }
+
+    .pdf-frame {
+      width: 100%;
+      height: 350px;
+      border: none;
+      background: #111;
+      border-radius: 12px;
     }
 
     /* LINKS & BUTTONS */
@@ -336,11 +356,17 @@
       text-decoration: underline;
     }
 
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
     .doc-link-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 15px;
       padding: 8px 16px;
       border-radius: 8px;
       background: rgba(0, 242, 254, 0.1);
@@ -407,6 +433,9 @@
 
   <header>
     <div class="header-content">
+      <!-- Profile Photo -->
+      <img src="Grassbot personal photo (1).jpg" alt="Alina Lionoudaki Profile Photo" class="profile-avatar">
+      
       <h1>Alina Lionoudaki</h1>
       <p class="tagline">Software Engineer | Data Analyst | Educator</p>
       <nav>
@@ -578,13 +607,13 @@
           </div>
           <p>Mentored student team in developing a robotic patrol system for early disease detection and targeted plant protection[cite: 1].</p>
           
-          <!-- Image Grid: Prototype & Award Coverage -->
+          <!-- Image Grid: Prototype & Fair Stand -->
           <div class="image-grid">
             <div class="project-image-container">
-              <img src="grassbot.jpg" alt="GrassBot Solutions Robotic Patrol Vehicle Prototype">
+              <img src="IMG_20260326_100417.jpg" alt="GrassBot Solutions Robotic Patrol Vehicle Prototype">
             </div>
             <div class="project-image-container">
-              <img src="https://drive.google.com/uc?export=view&id=1CkcwDSoKQyKTdJIAs8lPprXlMAZQMYKd" alt="Haniotika Nea Public News Award Feature - GrassBot Solutions">
+              <img src="Grassbot personal photo (2).jpg" alt="Alina Lionoudaki at JA Greece Trade Fair with GrassBot Stand">
             </div>
           </div>
 
@@ -596,14 +625,47 @@
             <li>Improves lawn quality and operational efficiency[cite: 1]</li>
           </ul>
 
-          <a href="https://drive.google.com/file/d/1E7_BfCODEG2nFHjwuN17_xBINBbp_hat/view?usp=drive_link" target="_blank" class="doc-link-btn">
-            📁 View GrassBot Presentation Document
-          </a>
+          <!-- PDF Embedded Preview for News Coverage -->
+          <div style="margin-top: 15px;">
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;">📰 <b>Public News Coverage Preview (Haniotika Nea):</b></p>
+            <iframe src="award_news.pdf" class="pdf-frame"></iframe>
+          </div>
+
+          <div class="btn-group">
+            <a href="award_news.pdf" target="_blank" class="doc-link-btn">
+              📄 Open Award News PDF in New Tab
+            </a>
+            <a href="https://drive.google.com/file/d/1E7_BfCODEG2nFHjwuN17_xBINBbp_hat/view?usp=drive_link" target="_blank" class="doc-link-btn">
+              📁 View GrassBot Presentation Document
+            </a>
+          </div>
 
           <div class="highlight-box">
             <h4>🏆 Awards & Distinctions:</h4>
             <p>• <b>Technology Pioneer Award</b> by ManpowerGroup[cite: 1]</p>
             <p>• <b>“Odysseas Kyriakopoulos” Award</b> in Digital Technologies & Artificial Intelligence[cite: 1]</p>
+          </div>
+        </div>
+
+        <!-- NEW ENTRY: ERASMUS AI-STEM -->
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="role-title">Erasmus+ AI-STEM Program Presentation</div>
+              <div class="institution">European Educational Project</div>
+            </div>
+            <span class="badge-year">2025 – 2026</span>
+          </div>
+          <p>Participated in and coordinated the presentation of the <b>ERASMUS AI-STEM 2025–2026</b> initiative, focusing on integrating Artificial Intelligence and STEM methodologies into modern school curricula.</p>
+          
+          <div style="margin-top: 15px;">
+            <iframe src="erasmus_ai_stem_presentation.pdf" class="pdf-frame"></iframe>
+          </div>
+
+          <div class="btn-group">
+            <a href="https://drive.google.com/file/d/1UaH0VGubdGVXv1jBoIMS7ElNXjaeUNAJ/view?usp=drive_link" target="_blank" class="doc-link-btn">
+              📁 Open ERASMUS AI-STEM Presentation PDF (Drive)
+            </a>
           </div>
         </div>
 
@@ -617,10 +679,14 @@
           </div>
           <p>Organized and coordinated the educational hosting of 30 Swedish students and staff from Edsbyn in May 2026 at Π.ΕΠΑ.Λ. Ακρωτηρίου, facilitating intercultural workshops, robotics activities, and educational exchange.</p>
           
-          <div class="image-grid">
-            <div class="project-image-container">
-              <img src="https://drive.google.com/uc?export=view&id=1u28dknihHif_JP_WI3RlRSyOFRUfOHHe" alt="Erasmus International Student Hosting from Edsbyn, Sweden">
-            </div>
+          <div style="margin-top: 15px;">
+            <iframe src="sweden_exchange.pdf" class="pdf-frame"></iframe>
+          </div>
+
+          <div class="btn-group">
+            <a href="sweden_exchange.pdf" target="_blank" class="doc-link-btn">
+              📄 Open Sweden Hosting Document PDF
+            </a>
           </div>
         </div>
 
