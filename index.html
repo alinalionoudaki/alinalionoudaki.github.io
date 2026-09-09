@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alina Lionoudaki – Modern Portfolio & CV</title>
+  <title>Alina Lionoudaki – Portfolio & CV</title>
 
   <!-- Modern Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,8 +78,8 @@
     }
 
     .profile-avatar {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
       margin: 0 auto 20px;
@@ -234,22 +234,22 @@
       margin-top: 10px;
     }
 
-    /* SKILLS GRID */
+    /* SKILLS GRID (FIXED 2x2 BALANCED GRID) */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
     .skill-card {
       background: var(--bg-card-alt);
-      padding: 20px;
+      padding: 22px;
       border-radius: 14px;
       border: 1px solid var(--border-color);
     }
 
     .skill-card h3 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--accent-teal);
       margin-bottom: 12px;
     }
@@ -310,7 +310,7 @@
       color: var(--accent-teal);
     }
 
-    /* IMAGE GRID & PREVIEWS */
+    /* PROJECT IMAGES */
     .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -337,15 +337,7 @@
       transform: scale(1.03);
     }
 
-    .pdf-frame {
-      width: 100%;
-      height: 350px;
-      border: none;
-      background: #111;
-      border-radius: 12px;
-    }
-
-    /* LINKS & BUTTONS */
+    /* BUTTONS & LINKS */
     a {
       color: var(--accent-teal);
       text-decoration: none;
@@ -367,18 +359,20 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 16px;
+      padding: 10px 18px;
       border-radius: 8px;
       background: rgba(0, 242, 254, 0.1);
       border: 1px solid rgba(0, 242, 254, 0.3);
       color: var(--accent-teal);
       font-weight: 600;
       font-size: 0.88rem;
+      transition: all 0.3s ease;
     }
 
     .doc-link-btn:hover {
       background: rgba(0, 242, 254, 0.2);
       text-decoration: none;
+      transform: translateY(-2px);
     }
 
     .contact-links {
@@ -421,6 +415,7 @@
       h1 { font-size: 2.5rem; }
       section { padding: 25px; }
       .timeline-header { flex-direction: column; align-items: flex-start; }
+      .skills-grid { grid-template-columns: 1fr; }
       .image-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -434,10 +429,10 @@
   <header>
     <div class="header-content">
       <!-- Profile Photo -->
-      <img src="Grassbot personal photo (1).jpg" alt="Alina Lionoudaki Profile Photo" class="profile-avatar">
+      <img src="profileAlina.jpg" alt="Alina Lionoudaki Profile Photo" class="profile-avatar">
       
       <h1>Alina Lionoudaki</h1>
-      <p class="tagline">Software Engineer | Data Analyst | Educator</p>
+      <p class="tagline">Software Engineer | Data Analyst | Teacher</p>
       <nav>
         <a href="#profile">Profile</a>
         <a href="#skills">Skills</a>
@@ -607,10 +602,10 @@
           </div>
           <p>Mentored student team in developing a robotic patrol system for early disease detection and targeted plant protection[cite: 1].</p>
           
-          <!-- Image Grid: Prototype & Fair Stand -->
+          <!-- Image of Prototype -->
           <div class="image-grid">
             <div class="project-image-container">
-              <img src="IMG_20260326_100417.jpg" alt="GrassBot Solutions Robotic Patrol Vehicle Prototype">
+              <img src="grassbot.jpg" alt="GrassBot Solutions Robotic Patrol Vehicle Prototype">
             </div>
             <div class="project-image-container">
               <img src="Grassbot personal photo (2).jpg" alt="Alina Lionoudaki at JA Greece Trade Fair with GrassBot Stand">
@@ -625,15 +620,9 @@
             <li>Improves lawn quality and operational efficiency[cite: 1]</li>
           </ul>
 
-          <!-- PDF Embedded Preview for News Coverage -->
-          <div style="margin-top: 15px;">
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;">📰 <b>Public News Coverage Preview (Haniotika Nea):</b></p>
-            <iframe src="award_news.pdf" class="pdf-frame"></iframe>
-          </div>
-
           <div class="btn-group">
-            <a href="award_news.pdf" target="_blank" class="doc-link-btn">
-              📄 Open Award News PDF in New Tab
+            <a href="https://drive.google.com/file/d/1CkcwDSoKQyKTdJIAs8lPprXlMAZQMYKd/view?usp=drive_link" target="_blank" class="doc-link-btn">
+              📰 View Award News Feature (PDF)
             </a>
             <a href="https://drive.google.com/file/d/1E7_BfCODEG2nFHjwuN17_xBINBbp_hat/view?usp=drive_link" target="_blank" class="doc-link-btn">
               📁 View GrassBot Presentation Document
@@ -647,7 +636,7 @@
           </div>
         </div>
 
-        <!-- NEW ENTRY: ERASMUS AI-STEM -->
+        <!-- ERASMUS AI-STEM -->
         <div class="timeline-item">
           <div class="timeline-header">
             <div>
@@ -657,14 +646,13 @@
             <span class="badge-year">2025 – 2026</span>
           </div>
           <p>Participated in and coordinated the presentation of the <b>ERASMUS AI-STEM 2025–2026</b> initiative, focusing on integrating Artificial Intelligence and STEM methodologies into modern school curricula.</p>
-          
-          <div style="margin-top: 15px;">
-            <iframe src="erasmus_ai_stem_presentation.pdf" class="pdf-frame"></iframe>
-          </div>
 
           <div class="btn-group">
+            <a href="https://drive.google.com/file/d/1u28dknihHif_JP_WI3RlRSyOFRUfOHHe/view?usp=drive_link" target="_blank" class="doc-link-btn">
+              📄 View ERASMUS Presentation (PDF)
+            </a>
             <a href="https://drive.google.com/file/d/1UaH0VGubdGVXv1jBoIMS7ElNXjaeUNAJ/view?usp=drive_link" target="_blank" class="doc-link-btn">
-              📁 Open ERASMUS AI-STEM Presentation PDF (Drive)
+              📁 View ERASMUS AI-STEM Document
             </a>
           </div>
         </div>
@@ -678,16 +666,6 @@
             <span class="badge-year">2026 – 2027</span>
           </div>
           <p>Organized and coordinated the educational hosting of 30 Swedish students and staff from Edsbyn in May 2026 at Π.ΕΠΑ.Λ. Ακρωτηρίου, facilitating intercultural workshops, robotics activities, and educational exchange.</p>
-          
-          <div style="margin-top: 15px;">
-            <iframe src="sweden_exchange.pdf" class="pdf-frame"></iframe>
-          </div>
-
-          <div class="btn-group">
-            <a href="sweden_exchange.pdf" target="_blank" class="doc-link-btn">
-              📄 Open Sweden Hosting Document PDF
-            </a>
-          </div>
         </div>
 
         <div class="timeline-item">
